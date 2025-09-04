@@ -28,7 +28,8 @@ public class Main {
                 }
 
 
-                if (mensajeServidor.contains("Escribe un número:")) {
+                if (mensajeServidor.contains("Escribe un número:") ||
+                    mensajeServidor.contains("Hay perro, eres un master, ¿Quieres volver a jugar? (SI)(NO)")) {
                     String respuesta = teclado.readLine();
                     escritor.println(respuesta);
                 }

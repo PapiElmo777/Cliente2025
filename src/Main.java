@@ -14,6 +14,7 @@ public class Main {
             System.out.println("Hubo problemas en la conexion de red");
             System.exit(1);
         }
+
         try (
                 PrintWriter escritor = new PrintWriter(salida.getOutputStream(), true);
                 BufferedReader lector = new BufferedReader(new InputStreamReader(salida.getInputStream()));
@@ -27,13 +28,13 @@ public class Main {
                     break;
                 }
 
-
                 if (mensajeServidor.contains("Escribe un número:") ||
-                    mensajeServidor.contains("Hay perro, eres un master, ¿Quieres volver a jugar? (SI)(NO)")) {
+                        mensajeServidor.contains("¿Quieres jugar de nuevo?")) {
                     String respuesta = teclado.readLine();
                     escritor.println(respuesta);
                 }
             }
+
         } catch (IOException e) {
             System.out.println("Error de comunicacion entre los sockets");
             System.exit(2);
